@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Login
+{% endblock title %}
+
+{% block body %}
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h3>Login</h3>
+      <hr />
+
+      <form method="post">
+        {% csrf_token %}
+        {% if next %}
+            <input type="hidden" name="next" value="{{ next }}">
+        {% endif %}
+        {{ form|crispy }}
+        <a class="mt-3" href="{% url 'user:register' %}">Don't have an account? Register</a>
+
+        <button type="submit" class="btn btn-primary float-end">Login</button>
+      </form>
+    </div>
+  </div>
+{% endblock body %}

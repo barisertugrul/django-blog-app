@@ -1,0 +1,9 @@
+/db.sqlite3
+/devdocs
+**/__pycache__/
+**/*.pyc
+
+# Virtual environment
+/.venv/
+/.env/
+.env
